@@ -1,0 +1,100 @@
+# Wheel 0.25+ needed to install certain packages on CPython 3.5+
+# like Pillow and psycopg2
+# See http://bitly.com/wheel-building-fails-CPython-35
+# Verified bug on Python 3.5.1
+wheel==0.29.0
+
+# Bleeding edge Django
+django==1.11.4 # pyup: >=1.10,<1.11
+
+# Configuration
+django-environ==0.4.3
+
+
+
+# Forms
+django-braces==1.11.0
+django-crispy-forms==1.6.1
+
+# Models
+django-model-utils==3.0.0
+
+# Images
+Pillow==4.2.1
+
+# Password storage
+argon2-cffi==16.3.0
+
+# For user registration, either via email or social
+# Well-built with regular release cycles!
+django-allauth==0.32.0
+django-webpack-loader==0.5.0
+
+# Python-PostgreSQL Database Adapter
+psycopg2==2.7.3
+
+# Unicode slugification
+awesome-slugify==1.6.5
+
+# Time zones support
+pytz==2017.2
+
+# Redis support
+django-redis==4.8.0
+redis>=2.10.5
+
+
+# Your custom requirements go here
+djangorestframework==3.6.3
+django-rest-swagger==2.1.2
+Markdown==2.6.8
+django-filter==1.0.4
+djoser==0.6.0
+django-rest-knox===3.0.0
+pyopenssl===17.2.0
+
+# actstream
+django-activity-stream==0.6.4
+django-jsonfield==1.0.1
+django-jsonfield-compat==0.4.4
+
+# human time
+arrow==0.10.0
+
+# for mock data
+Faker==0.7.18
+
+# Celery
+celery==4.1.0
+django-celery-beat==1.0.1
+
+# S3
+django-storages==1.6.5
+boto3==1.5.5
+
+# excel tool
+openpyxl==2.4.9
+
+# pyx compiler
+# Cython==0.27.3
+
+# Image tools
+Pillow==4.2.1
+
+# python dot dict
+python-box==3.1.1
+
+# WSGI Handler
+# ------------------------------------------------
+gevent==1.2.2
+gunicorn==19.7.1
+
+# Static and Media Storage
+# ------------------------------------------------
+Collectfast==0.5.2
+
+# Email backends for Mailgun, Postmark, SendGrid and more
+# -------------------------------------------------------
+django-anymail==0.11.1
+
+raven==6.1.0
