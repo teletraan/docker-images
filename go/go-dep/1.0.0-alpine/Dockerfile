@@ -1,3 +1,7 @@
 FROM golang:1.10.1-alpine
 
-RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+COPY install-dep.sh /app/install-dep.sh
+
+RUN chmod +x /app/install-dep.sh && source /app/install-dep.sh
+
+CMD ["go"]
