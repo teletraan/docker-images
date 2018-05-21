@@ -13,6 +13,6 @@ RUN apk update \
   && addgroup -S django && adduser -S -G django django \
   # install requirements
   && pip install --no-cache-dir -r requirements.txt \
-  && apk del build-deps && rm -rf requirements.txt
+  && rm -rf requirements.txt
 
 CMD ["python3"]
