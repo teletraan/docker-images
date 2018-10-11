@@ -5,7 +5,7 @@
 wheel==0.29.0
 
 # Bleeding edge Django
-django==1.11.4 # pyup: >=1.10,<1.11
+django==1.11.16 # pyup: >=1.10,<1.11
 
 # Configuration
 django-environ==0.4.3
@@ -51,7 +51,7 @@ Markdown==2.6.8
 django-filter==1.0.4
 djoser==0.6.0
 django-rest-knox===3.0.0
-pyopenssl===17.2.0
+pyopenssl>=17.5.0
 
 # actstream
 django-activity-stream==0.6.4
