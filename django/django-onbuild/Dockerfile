@@ -28,7 +28,10 @@ ONBUILD COPY ./scripts /scripts
 
 ONBUILD ARG compile=-1
 
-ONBUILD RUN chmod -R +x /scripts && COMPILE_CODES=$compile sh /scripts/build.sh && apk del build-deps
+ONBUILD RUN chown -R django /scripts && chown -R django /app \
+        && chmod -R +x /scripts && COMPILE_CODES=$compile sh /scripts/build.sh && apk del build-deps
+
+ONBUILD USER django
 
 WORKDIR /app
 
