@@ -26,9 +26,9 @@ ONBUILD COPY . /app
 
 ONBUILD COPY ./scripts /scripts
 
-ONBUILD RUN chmod -R +x /scripts && chown -R django /scripts && sh /scripts/build.sh && apk del build-deps
+ONBUILD ARG compile=-1
 
-ONBUILD USER django
+ONBUILD RUN chmod -R +x /scripts && COMPILE_CODES=$compile sh /scripts/build.sh && apk del build-deps
 
 WORKDIR /app
 
