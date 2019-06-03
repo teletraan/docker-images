@@ -17,6 +17,8 @@ RUN echo http://mirrors.ustc.edu.cn/alpine/v3.8/main > /etc/apk/repositories \
 
 ONBUILD COPY ./requirements /requirements
 
+ONBUILD COPY ./packages /app/packages
+
 ONBUILD RUN pip install --no-cache-dir \
     --index-url=https://mirrors.aliyun.com/pypi/simple \
     -r /requirements/production.txt \
@@ -29,7 +31,8 @@ ONBUILD COPY ./scripts /scripts
 ONBUILD ARG compile=-1
 
 ONBUILD RUN chown -R django:django /scripts && chown -R django:django /app \
-        && chmod -R +x /scripts && COMPILE_CODES=$compile sh /scripts/build.sh && apk del build-deps
+        && chmod -R +x /scripts && COMPILE_CODES=$compile sh /scripts/build.sh
+        # && apk del build-deps
 
 ONBUILD USER django
 
