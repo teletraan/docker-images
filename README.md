@@ -9,3 +9,13 @@ Teletraan common docker images
 FROM teletraan/django-onbuild:0.1.0
 ```
 
+## django-onbuild
+
+### 0.2.1 
+
+Last version of requirements folder based. 
+
+
+### 1.0.0
+
+requirements.txt

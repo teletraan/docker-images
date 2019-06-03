@@ -1,4 +1,4 @@
-FROM python:3.7.1-alpine3.8
+FROM python:3.7.3-alpine3.8
 
 ENV PYTHONUNBUFFERED 1
 
@@ -15,14 +15,14 @@ RUN echo http://mirrors.ustc.edu.cn/alpine/v3.8/main > /etc/apk/repositories \
   && addgroup -S django \
   && adduser -S -G django django
 
-ONBUILD COPY ./requirements /requirements
+ONBUILD COPY ./requirements.txt requirements.txt
 
 ONBUILD COPY ./packages /app/packages
 
 ONBUILD RUN pip install --no-cache-dir \
     --index-url=https://mirrors.aliyun.com/pypi/simple \
-    -r /requirements/production.txt \
-  && rm -rf /requirements
+    -r requirements.txt \
+  && rm -rf /requirements && rm -rf /app/packages
 
 ONBUILD COPY . /app
 
