@@ -13,7 +13,9 @@ RUN echo http://mirrors.ustc.edu.cn/alpine/v3.8/main > /etc/apk/repositories \
   # CFFI dependencies
   && apk add --no-cache libffi-dev py-cffi \
   && addgroup -S django \
-  && adduser -S -G django django
+  && adduser -S -G django django \
+  # netifaces dependencies
+  && apk add --no-cache linux-headers
 
 ONBUILD COPY ./requirements.txt requirements.txt
 
