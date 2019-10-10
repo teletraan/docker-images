@@ -11,7 +11,7 @@ RUN echo http://mirrors.ustc.edu.cn/alpine/v3.8/main > /etc/apk/repositories \
   # Pillow dependencies
   && apk add --no-cache jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev \
   # CFFI dependencies
-  && apk add --no-cache libffi-dev py-cffi \
+  && apk add --no-cache libffi-dev py-cffi supervisor \
   && addgroup -S django \
   && adduser -S -G django django \
   # netifaces dependencies
@@ -29,6 +29,8 @@ ONBUILD RUN pip install --no-cache-dir \
 ONBUILD COPY . /app
 
 ONBUILD COPY ./scripts /scripts
+
+ONBUILD COPY ./supervisor/supervisord.conf /etc/
 
 ONBUILD ARG compile=-1
 
