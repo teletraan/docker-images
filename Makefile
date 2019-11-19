@@ -11,4 +11,4 @@ push-go111-ub16: build-go111-ub16
 	docker pusu teletraan/golang:1.11-ubuntu16.04
 
 build-django-onbuild:
-	docker build -t teletraan/django-onbuild:0.2.1 -f django/django-onbuild/Dockerfile .
+	docker build -t dcr.teletraan.io/public/django-onbuild:1.1.4 -f django/django-onbuild/Dockerfile .
