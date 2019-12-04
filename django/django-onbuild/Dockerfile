@@ -15,9 +15,7 @@ RUN echo http://mirrors.ustc.edu.cn/alpine/v3.10/main > /etc/apk/repositories \
   && addgroup -S django \
   && adduser -S -G django django \
   # netifaces dependencies
-  && apk add --no-cache linux-headers \
-  # paramiko dependencies
-  && apk add --no-cache py3-paramiko
+  && apk add --no-cache linux-headers
 
 ONBUILD COPY ./requirements.txt requirements.txt
 ONBUILD COPY ./requirements requirements
@@ -42,7 +40,7 @@ ONBUILD COPY ./supervisor/supervisord.conf /etc/
 ONBUILD RUN mv /app/supervisor/supervisord.conf /etc/ \
         && chown -R django:django /scripts && chown -R django:django /app \
         && chmod -R +x /scripts && COMPILE_CODES=$COMPILE sh /scripts/build.sh
-        # && apk del build-deps
+ONBUILD RUN if [ "$COMPILE" = "1" ];  then  apk del build-deps; fi
 
 ONBUILD USER django
 
