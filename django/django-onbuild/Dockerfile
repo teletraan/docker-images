@@ -15,7 +15,9 @@ RUN echo http://mirrors.ustc.edu.cn/alpine/v3.10/main > /etc/apk/repositories \
   && addgroup -S django \
   && adduser -S -G django django \
   # netifaces dependencies
-  && apk add --no-cache linux-headers
+  && apk add --no-cache linux-headers \
+  # paramiko dependencies
+  && apk add --no-cache py3-paramiko
 
 ONBUILD COPY ./requirements.txt requirements.txt
 ONBUILD COPY ./requirements requirements
