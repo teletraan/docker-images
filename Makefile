@@ -12,3 +12,6 @@ push-go111-ub16: build-go111-ub16
 
 build-django-onbuild:
 	docker build -t dcr.teletraan.io/public/django-onbuild:1.1.5 -f django/django-onbuild/Dockerfile .
+
+build-django-simple-onbuild:
+	docker build -t dcr.teletraan.io/public/django-simple-onbuild:0.1.0 -f django/django-simple-onbuild/Dockerfile .
