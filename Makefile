@@ -15,3 +15,6 @@ build-django-onbuild:
 
 build-django-simple-onbuild:
 	docker build -t dcr.teletraan.io/public/django-simple-onbuild:0.1.0 -f django/django-simple-onbuild/Dockerfile .
+
+build-uvicorn-gunicorn:
+	docker build -t dcr.teletraan.io/public/uvicorn-gunicorn:python3.7-alpine3.10 -f uvicorn-gunicorn/Dockerfile ./uvicorn-gunicorn
